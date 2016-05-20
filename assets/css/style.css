@@ -29,4 +29,6 @@ section:nth-child(2){
 .row{
   background-color: #232323;
 }
-
+.logo{
+    margin-top: 20px;
+}
