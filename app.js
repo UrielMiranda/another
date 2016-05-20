@@ -3,19 +3,21 @@
 
   angular
   .module("lastFm",["ngResource"])
+      .constant("apikey",{"url":"1ea476011a970d4658b7ae3a85170d36"})
   .controller("topTenCtrl",topTenCtrl)
   .controller("tracksCtrl",tracksCtrl)
-  .factory("topTracks",topTracks)´´
+  .factory("topTracks",topTracks)
   .factory("artistLastFm",artistLastFm);
 
+  apikey.$inject = ["apikey"];
   artistLastFm.$inject = ["$resource"];
-  function artistLastFm($resource){
-    return $resource("http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=1ea476011a970d4658b7ae3a85170d36&format=json");
+  function artistLastFm($resource,apikey){
+    return $resource("http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key="+apikey.url+"&format=json");
   }
 
   topTracks.$inject = ["$resource"];
-  function topTracks($resource){
-    return $resource("http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=1ea476011a970d4658b7ae3a85170d36&format=json");
+  function topTracks($resource,apikey){
+    return $resource("http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key="+apikey.url+"&format=json");
   }
 
 
