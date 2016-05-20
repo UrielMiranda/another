@@ -22,6 +22,7 @@
         artist.topten = artistLastFm.get()
             .$promise.then(function(data){
                 artist.track = data.artists.artist;
+                console.log(artist.track);
             });
     }
 })();
