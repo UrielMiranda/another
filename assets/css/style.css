@@ -1,4 +1,7 @@
+/* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* Tags */
 body{
   font-family: 'Roboto', sans-serif;
   background-color: #343434;
@@ -7,6 +10,14 @@ h1,h2,h3,h4{
   text-align: center;
   color:#fff;
 }
+section{
+  text-align: center !important;
+}
+section:nth-child(2){
+    margin:5% 0;
+}
+
+/* Class */
 .card{
   display: inline-block;
   clear:both;
@@ -16,5 +27,6 @@ h1,h2,h3,h4{
   width: 100%;
 }
 .row{
- background-color:  #1c1c1f;
+  background-color: #232323;
 }
+
