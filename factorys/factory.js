@@ -8,13 +8,12 @@
         .factory("artistLastFm",artistLastFm);
 
 
-    apikey.$inject = ["apikey"];
-    artistLastFm.$inject = ["$resource"];
+    artistLastFm.$inject = ["$resource","apikey"];
     function artistLastFm($resource,apikey){
         return $resource("http://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key="+apikey.url+"&format=json");
     }
 
-    topTracks.$inject = ["$resource"];
+    topTracks.$inject = ["$resource","apikey"];
     function topTracks($resource,apikey){
         return $resource("http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key="+apikey.url+"&format=json");
     }
